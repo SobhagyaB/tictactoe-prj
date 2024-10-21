@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Add this CSS to your stylesheet (e.g., App.css) */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient colors */
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling */
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  color: #ffffff; /* Title color for better contrast against the gradient */
+  text-align: center;
+  font-size: 2.5rem; /* Increase font size */
+  margin-bottom: 20px; /* Space between title and game board */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+table {
+  border-collapse: collapse; /* Merge borders for a cleaner look */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow for depth */
+  border-radius: 10px; /* Rounded corners for the table */
+  overflow: hidden; /* Clip children to fit rounded corners */
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  font-size: 4rem; /* Larger font size for X and O */
+  text-align: center;
+  vertical-align: middle; /* Center text vertically */
+  border: 2px solid #ffffff; /* White border for cells */
+  background-color: rgba(255, 255, 255, 0.1); /* Light background color */
+  color: #ffffff; /* Default text color */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+}
+
+td:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Lighter background on hover */
+  color: #ffffff; /* Maintain text color on hover */
+}
+
+td.X {
+  color: #ff5733; /* Color for X */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+}
+
+td.O {
+  color: #33c3ff; /* Color for O */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for better visibility */
+}
+
+@media (max-width: 600px) {
+  td {
+      width: 80px;
+      height: 80px;
+      font-size: 3rem; /* Responsive font size for smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+  
+  h1 {
+      font-size: 2rem; /* Responsive title size for smaller screens */
   }
 }
